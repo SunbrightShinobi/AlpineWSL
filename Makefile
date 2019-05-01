@@ -84,9 +84,6 @@ rootfs: base.tar.gz
 		py-pip \
 		python-dev
 	sudo chroot rootfs /sbin/apk add \
-		python3 \
-		py3-pip \
-		python3-dev \
 		graphviz \
 		openjdk8 \
 		ghostscript \
@@ -99,40 +96,39 @@ rootfs: base.tar.gz
 	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
 		pip \
 		wheel
-	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
-		pip \
-		wheel
-	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
-		sphinx \
-		sphinx-autobuild \
-		sphinx-jinja \
+	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
+		colorama \
 		netaddr \
-		gitpython \
-		seqdiag \
-		sphinxcontrib-seqdiag \
 		nwdiag \
-		sphinxcontrib-nwdiag \
-		blockdiag \
-		sphinxcontrib-blockdiag \
+		gitpython \
 		actdiag \
-		sphinxcontrib-actdiag \
-		sphinx-git \
-		sphinx_rtd_theme \
+		blockdiag \
+		seqdiag \
 		plantuml \
 		reportlab \
-		sphinxcontrib-plantuml \
-		colorama
-	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
 		tablib \
 		ciscoconfparse \
 		nety \
+		pyyaml \
+		yml2json \
+		xlsxwriter \
+		xlsxcompare
+	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
+		sphinx \
+		sphinx-autobuild \
+		sphinx-jinja \
+		sphinx-git \
+		sphinx_rtd_theme
+	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
+		sphinxcontrib-seqdiag \
+		sphinxcontrib-nwdiag \
+		sphinxcontrib-blockdiag \
+		sphinxcontrib-actdiag \
+		sphinxcontrib-plantuml \
 		sphinxcontrib-jupyter \
 		sphinxcontrib_ansibleautodoc \
 		sphinxcontrib-jsonschema \
 		sphinxcontrib-confluencebuilder \
-		pyyaml \
-		yml2json
-	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
 		sphinx-markdown-builder \
 		sphinxcontrib-fulltoc
 	sudo chroot rootfs \
