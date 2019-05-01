@@ -3,7 +3,7 @@ dist: trusty
 language: bash
 before_script:
 - sudo apt-get update -qq
-- sudo apt-get install make curl zip unzip check texlive-full -qq
+- sudo apt-get install make curl zip unzip check texlive-full python python-dev -qq
 script:
 - make
 notifications:
