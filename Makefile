@@ -95,9 +95,11 @@ rootfs: base.tar.gz
 		-o /usr/local/plantuml.jar
 	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
 		pip \
-		wheel
+		setuptools \
+		wheel 
 	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
 		colorama \
+		Pillow-6.0.0-cp27-cp27m-manylinux1_x86_64.whl \
 		netaddr \
 		nwdiag \
 		gitpython \
