@@ -99,13 +99,8 @@ rootfs: base.tar.gz
 		wheel 
 	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
 		colorama \
-		Pillow-6.0.0-cp27-cp27m-manylinux1_x86_64.whl \
 		netaddr \
-		nwdiag \
 		gitpython \
-		actdiag \
-		blockdiag \
-		seqdiag \
 		plantuml \
 		reportlab \
 		tablib \
@@ -123,10 +118,6 @@ rootfs: base.tar.gz
 		sphinx-git \
 		sphinx_rtd_theme
 	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
-		sphinxcontrib-seqdiag \
-		sphinxcontrib-nwdiag \
-		sphinxcontrib-blockdiag \
-		sphinxcontrib-actdiag \
 		sphinxcontrib-plantuml \
 		sphinxcontrib-jupyter \
 		sphinxcontrib_ansibleautodoc \
