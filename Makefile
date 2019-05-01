@@ -108,11 +108,12 @@ rootfs: base.tar.gz
 		reportlab \
 		tablib \
 		ciscoconfparse \
-		nety \
 		pyyaml \
 		yml2json \
 		xlsxwriter \
 		xlsxcompare
+	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
+		nety
 	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
 		sphinx \
 		sphinx-autobuild \
