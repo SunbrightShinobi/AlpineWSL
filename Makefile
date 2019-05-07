@@ -97,34 +97,6 @@ rootfs: base.tar.gz
 		pip \
 		setuptools \
 		wheel 
-	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
-		colorama \
-		netaddr \
-		gitpython \
-		plantuml \
-		reportlab \
-		tablib \
-		ciscoconfparse \
-		pyyaml \
-		yml2json \
-		xlsxwriter \
-		xlsxcompare
-	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
-		nety
-	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
-		sphinx \
-		sphinx-autobuild \
-		sphinx-jinja \
-		sphinx-git \
-		sphinx_rtd_theme
-	sudo -H chroot rootfs /usr/bin/python -m pip install --upgrade \
-		sphinxcontrib-plantuml \
-		sphinxcontrib-jupyter \
-		sphinxcontrib_ansibleautodoc \
-		sphinxcontrib-jsonschema \
-		sphinxcontrib-confluencebuilder \
-		sphinx-markdown-builder \
-		sphinxcontrib-fulltoc
 	sudo chroot rootfs \
 		/usr/bin/$(DLR) $(DLR_FLAGS) $(ACROTEX_URL) \
 		-o /tmp/acrotex.zip
